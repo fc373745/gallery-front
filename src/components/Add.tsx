@@ -5,12 +5,14 @@ interface Props {}
 export const Add: React.FC<Props> = () => {
     const [name, setName] = React.useState("");
     const [image, setImage] = React.useState<any>("");
+    const [caption, setCaption] = React.useState("");
 
     async function postImage(e: React.FormEvent<HTMLDivElement>) {
         e.preventDefault();
         let formData = new FormData();
         formData.set("name", name);
         formData.append("image", image);
+        formData.append("caption", caption);
         const headers = { headers: { "Content-Type": "multipart/form-data" } };
 
         const response = await axios.post(
@@ -20,11 +22,18 @@ export const Add: React.FC<Props> = () => {
         );
         setName("");
         setImage("");
+        setCaption("");
     }
     return (
         <div onSubmit={postImage}>
             <form>
+                Name:
                 <input value={name} onChange={e => setName(e.target.value)} />
+                Caption:
+                <input
+                    value={caption}
+                    onChange={e => setCaption(e.target.value)}
+                />
                 <input
                     type="file"
                     onChange={e => {
