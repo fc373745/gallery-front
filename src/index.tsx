@@ -10,6 +10,19 @@ const Global = createGlobalStyle`
     *{
         padding: 0;
         margin: 0;
+        overflow-x: hidden;
+    }
+    img {
+        z-index:0;
+    }
+
+    @keyframes animateIn{
+        0%{
+            opacity:0;
+        }
+        100%{
+            opacity:1;
+        }
     }
 `;
 const Index = (
