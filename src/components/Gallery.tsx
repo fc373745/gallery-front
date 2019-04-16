@@ -64,7 +64,7 @@ export const Gallery: React.FC<Props> = () => {
     const Column = styled.div`
         display: flex;
         flex-direction: column;
-        width: 450px;
+        width: 380px;
     `;
     const Container = styled.div`
         display: flex;

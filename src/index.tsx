@@ -7,7 +7,17 @@ import { Gallery } from "./components/Gallery";
 import * as serviceWorker from "./serviceWorker";
 
 const Global = createGlobalStyle`
+    @font-face {
+        font-family: "Merriwether";
+        src: url("./fonts/MerriweatherSans-Regular.ttf");
+    }
+
+    @font-face {
+        font-family: "Martel";
+        src: url("./fonts/MartelSans-ExtraBold.ttf");
+    }
     *{
+        font-family: "Martel";
         padding: 0;
         margin: 0;
         overflow-x: hidden;
